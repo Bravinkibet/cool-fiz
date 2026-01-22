@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Request</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="page">
+        <div class="left-panel">
+            <div class="logo">
+                <h1>CoolFizz</h1>
+                <p>Send your request. We deliver.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Why submit a request?</h3>
+                <ul>
+                    <li>Quick response within 24 hours</li>
+                    <li>Custom orders accepted</li>
+                    <li>Discounts for repeat customers</li>
+                </ul>
+            </div>
+
+            <div class="gif-box">
+                <img src="https://cdn.dribbble.com/userupload/34378341/file/original-e9e9ae1ec33ec8eee369b1c353b5d4dc.gif" alt="Cool fizz background">
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <form method="POST" class="form">
+                <h2>Submit Request</h2>
+
+                <div class="input-group">
+                    <input type="text" name="name" placeholder=" " required>
+                    <label>Your Name</label>
+                </div>
+
+                <div class="input-group">
+                    <textarea name="message" rows="5" placeholder=" " required></textarea>
+                    <label>Your Request</label>
+                </div>
+
+                <button type="submit" class="btn">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
