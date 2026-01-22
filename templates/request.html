@@ -16,7 +16,6 @@
         </div>
     </nav>
 
-
     <div class="page">
         <div class="left-panel">
             <div class="logo">
@@ -56,6 +55,24 @@
         </div>
     </div>
 
-    <script src="/static/script.js"></script>
+    <script>
+    document.querySelector(".form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch("/request", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert(data.message);
+            this.reset();
+        })
+        .catch(err => alert("Error saving request"));
+    });
+    </script>
+
 </body>
 </html>

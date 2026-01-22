@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import sqlite3
 
 app = Flask(__name__)
@@ -15,7 +15,20 @@ def user_request():
     if request.method == "POST":
         name = request.form["name"]
         message = request.form["message"]
-        return f"Request received from {name}"
+
+        db = get_db()
+        cursor = db.cursor()
+
+        cursor.execute(
+            "INSERT INTO requests (name, message) VALUES (?, ?)",
+            (name, message)
+        )
+
+        db.commit()
+        db.close()
+
+        return jsonify({"status": "success", "message": "Request saved successfully!"})
+
     return render_template("request.html")
 
 @app.route("/store", methods=["GET", "POST"])
@@ -33,10 +46,9 @@ def store():
         db.commit()
         db.close()
 
-        return "Data stored successfully!"
+        return jsonify({"status": "success", "message": "Data stored successfully!"})
+
     return render_template("store.html")
 
-
 if __name__ == "__main__":
-    print("Flask server starting...")
     app.run(debug=True)
