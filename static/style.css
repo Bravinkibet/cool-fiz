@@ -10,8 +10,7 @@ body {
   background: #070707;
   color: #fff;
   min-height: 100vh;
-  overflow: hidden; /* <-- This makes the page non-scrollable */
-}
+  overflow: hidden;
 
 /* ===== PAGE LAYOUT ===== */
 .page {
@@ -94,7 +93,7 @@ body {
 .gif-box img {
   width: 100%;
   height: auto;
-  max-height: 260px;  /* <-- prevents image from being too large */
+  max-height: 260px;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -206,7 +205,6 @@ body {
 
 /* ============================= */
 /* ===== ONLY ADVERT SECTION ===== */
-/* ============================= */
 
 .card {
   width: 850px;
@@ -295,7 +293,6 @@ body {
     height: 140px;
   }
 }
-/* ===== GLOBAL ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -313,12 +310,7 @@ body {
   position: relative;
 }
 
-body::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-}
+
 
 .form-container {
   width: 100%;
@@ -375,4 +367,44 @@ body::after {
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 22px rgba(255, 69, 0, 0.35);
+}
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 1000;
+}
+
+.nav-brand {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.nav-links a {
+  margin-left: 28px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ff2b2b;
+}
+
+/* Push content below nav */
+.card {
+  margin-top: 90px;
+}
 }

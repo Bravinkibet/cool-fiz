@@ -5,17 +5,41 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="form-container">
-        <form method="POST" class="form">
-            <h2>User Registration</h2>
-            <div class="input-group">
-                <input type="text" name="name" placeholder="Full Name" required>
-            </div>
-            <div class="input-group">
-                <input type="email" name="email" placeholder="Email Address" required>
-            </div>
-            <button class="btn" type="submit">Save</button>
-        </form>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav">
+        <div class="nav-brand">CoolFizz</div>
+        <div class="nav-links">
+            <a href="/">Advert</a>
+            <a href="/store">Store</a>
+            <a href="/request">Request</a>
+        </div>
+    </nav>
+
+    <!-- PAGE WRAPPER (HTML-ONLY CENTERING) -->
+    <div style="
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 70px;
+    ">
+        <div class="form-container">
+            <form method="POST" class="form">
+                <h2>User Registration</h2>
+
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+
+                <button class="btn" type="submit">Save</button>
+            </form>
+        </div>
     </div>
+
 </body>
 </html>
